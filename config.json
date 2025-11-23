@@ -1,0 +1,70 @@
+{
+    "reload_style_on_change": true,
+    "layer": "top",
+    "position": "bottom",
+    "spacing": 0,
+    "height": 26,
+    "modules-left": ["custom/lyrics"],
+    "modules-right": [
+      "mpris#player-prev",
+      "mpris#pauseplay",
+      "mpris#player-next",
+      "mpris"
+    ],
+  
+    "mpris": {
+      "format": "{title} - {artist}",
+      "format-paused": "{title} - {artist}",
+      "player": "playerctld",
+      "tooltip": true,
+      "tooltip-format": "{player} ({status}) {dynamic}",
+      "on-click": "playerctl play-pause"
+    },
+    "mpris#pauseplay": {
+      "format": "",
+      "format-paused": "",
+      "player": "playerctld",
+      "on-click": "playerctl play-pause"
+    },
+  
+    "custom/lyrics": {
+      "return-type": "json",
+      "format": "{icon} {0}",
+      "hide-empty-text": true,
+      "format-icons": {
+        "playing": "",
+        "paused": "",
+        "lyric": "",
+        "music": "󰝚",
+        "no_lyric": "",
+        "getting": ""
+      },
+      "exec-if": "which waybar-lyric",
+      "exec": "waybar-lyric --quiet",
+      "on-click": "waybar-lyric play-pause"
+    },
+    "mpris#player-prev": {
+      "format": "󰒮",
+      "tooltip": "Previous",
+      "player": "playerctld",
+  
+      "on-click": "playerctl previous",
+      "interval": "once"
+    },
+    "custom/player-play": {
+      "format": "{title} - {artist}",
+      "format-paused": "{title} - {artist}",
+      "player": "playerctld",
+      "tooltip": true,
+      "tooltip-format": "{player} ({status}) {dynamic}",
+      "on-click": "playerctl play-pause"
+    },
+    "mpris#player-next": {
+      "format": "󰒭",
+      "tooltip": "Next",
+      "player": "playerctld",
+  
+      "on-click": "playerctl next",
+      "interval": "once"
+    }
+  }

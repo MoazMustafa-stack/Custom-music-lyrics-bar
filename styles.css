@@ -1,0 +1,11 @@
+* {
+  color: rgb(197, 202, 231);
+  background-color: rgb(20, 21, 27);
+  margin: 2;
+  border: none;
+  border-radius: 0;
+  min-height: 0;
+  font-family: "CaskaydiaMono Nerd Font";
+  font-size: 12px;
+  padding: 0 12px;
+}
